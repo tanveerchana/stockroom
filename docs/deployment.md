@@ -31,3 +31,7 @@ Official references checked during implementation:
 Set `STOCKROOM_EPHEMERAL_HOSTING=true` for the free Render deployment. It adds a visible notice on sign-in/registration/invitation and workspace pages that inventory, accounts and sessions can reset on restart, redeploy or idle spin-down, and that only synthetic data is permitted. The literal string `true` enables the flag; missing/false values leave it disabled. The flag changes disclosure only: it does not purge or reinitialize existing data. Regular self-hosted installations retain their existing database/session behavior. Data durability still depends on the actual host filesystem or mounted volume.
 
 Exact Docker start configuration: `APP_ENV=production`, `PORT=10000`, `STOCKROOM_EPHEMERAL_HOSTING=true`, `DB_PATH=/var/www/html/storage/stockroom.sqlite`, `SESSION_PATH=/var/www/html/storage/sessions`. The Dockerfile already provides all except the Render-specific true flag. There is no app secret, shared password, SMTP key or third-party API credential to generate; native PHP sessions and CSRF/invitation/request tokens use cryptographically secure random values.
+
+## Deployed demo
+
+The existing free service is live at https://stockroom-kz2t.onrender.com/. The official PHP Apache Docker image built successfully on Render and `/health.php` returned HTTP 200. The receipt/reservation/fulfilment and CSV workflow proof is in [verification.md](verification.md#hosted-verification--2-november-2026). This remains ephemeral hosting; the successful boot is not a durability claim.

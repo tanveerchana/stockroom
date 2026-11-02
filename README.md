@@ -4,6 +4,10 @@ A tenant-scoped inventory and reservation workspace built with **Core PHP 8.3, P
 
 Stockroom is a working engineering portfolio project. All inventory is synthetic. There is no commerce, payment processing, shipping or external warehouse integration.
 
+[Live demo](https://stockroom-kz2t.onrender.com/) · [CI checks](https://github.com/tanveerchana/stockroom/actions) · [Hosted verification](docs/verification.md#hosted-verification--2-november-2026)
+
+The free demo uses temporary storage and can take time to wake after idle spin-down.
+
 ## Workflows
 
 - Create an owner account and an isolated workspace, or open a separate 24-hour guest demo with eight seeded catalog items.
@@ -76,7 +80,7 @@ Create a Docker web service from this repository, or use the included `render.ya
 
 **Free Render storage is ephemeral.** SQLite data and file sessions can disappear when a free service restarts, redeploys or spins down. The Render blueprint sets `STOCKROOM_EPHEMERAL_HOSTING=true`, which displays an explicit reset/no-real-data notice before sign-in and on every workspace screen. The Docker and self-host defaults keep this flag `false`; it is a disclosure flag and does not delete, reset or alter the database. Do not use it for real inventory or sensitive data. Durable deployment needs a paid persistent disk mounted outside `public/` with `DB_PATH` and `SESSION_PATH` pointing to it, or a deliberate database migration. SQLite should run as a single service instance, not multiple independently stored replicas.
 
-No Docker daemon was available in the implementation environment, so native PHP behavior was verified but the image still needs a hosted build/boot check. See [deployment notes](docs/deployment.md).
+The Docker image built and booted successfully on Render. The public health endpoint, guest workflow, receipt, reservation, fulfilment and audit export were verified. See [verification](docs/verification.md) and [deployment notes](docs/deployment.md).
 
 ## Boundaries
 
