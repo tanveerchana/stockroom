@@ -1,0 +1,15 @@
+services:
+    - type: web
+      name: stockroom
+      runtime: docker
+      plan: free
+      region: singapore
+      dockerfilePath: ./Dockerfile
+      healthCheckPath: /health.php
+      envVars:
+          - key: APP_ENV
+            value: production
+          - key: PORT
+            value: 10000
+          - key: STOCKROOM_EPHEMERAL_HOSTING
+            value: "true"

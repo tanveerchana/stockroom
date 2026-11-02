@@ -1,0 +1,32 @@
+{
+    "name": "tanveerchana/stockroom",
+    "description": "Tenant-scoped synthetic inventory and reservation workspace in Core PHP",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": "~8.3.0",
+        "ext-pdo": "*",
+        "ext-pdo_sqlite": "*",
+        "ext-mbstring": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Stockroom\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": "php tests/run.php",
+        "lint": "php bin/lint.php"
+    },
+    "repositories": [
+        {
+            "packagist.org": false
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "require-dev": {
+        "ext-curl": "*"
+    }
+}

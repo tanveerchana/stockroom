@@ -1,0 +1,9 @@
+.git
+.env
+.env.*
+vendor
+node_modules
+storage/*
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm

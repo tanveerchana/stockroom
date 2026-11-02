@@ -1,0 +1,10 @@
+/vendor/
+/.env
+/.env.*
+!/.env.example
+/storage/*
+!/storage/.gitkeep
+/node_modules/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
